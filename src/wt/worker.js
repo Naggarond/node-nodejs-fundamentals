@@ -1,9 +1,12 @@
 import { parentPort } from 'worker_threads';
 
-// Receive array from main thread
-// Sort in ascending order
-// Send back to main thread
+const sort = (data) => {
+    if (!Array.isArray(data)) return [];
+    data.sort((a, b) => a - b);
+    return data;
+};
 
 parentPort.on('message', (data) => {
-  // Write your code here
+    const result = sort(data);
+    parentPort.postMessage(result);
 });
