@@ -8,6 +8,7 @@
   },
   "type": "module",
   "scripts": {
+    "start": "node src/main.js",
     "fs:snapshot": "node src/fs/snapshot.js",
     "fs:restore": "node src/fs/restore.js",
     "fs:findByExt": "node src/fs/findByExt.js --ext txt",
